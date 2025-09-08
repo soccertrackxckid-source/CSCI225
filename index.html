@@ -1,7 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>CSCI225 Homepage of Evan Mcleod</title>
+    <style>
+        /* Table styling */
+        .schedule-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .schedule-table th, .schedule-table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .schedule-table th {
+            color: white;
+        }
+
+        /* Header colors */
+        .time-col { background-color: #ff4b25; }
+        .day-col { background-color: #09e04d; }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -21,7 +43,7 @@
         <p>Hello, my name is Evan Mcleod, and I am a student at 
            <mark>USC Aiken</mark> pursuing a degree in both Computer Science and Art. 
            I am also a proud member of the university’s Cross Country team, and I enjoy working out and running in my free time. 
-           Outside of academics and athletics, I’m a big fan of superhero and sci-fi shows; I love watching and rewatching series like 
+           Outside of academics and athletics, I’m a big fan of superhero and sci-fi shows — I love watching and rewatching series like 
            <q>X-Men</q>, Ben 10, and Avengers. 
            I'm excited to combine my creativity and technical skills as I continue to grow in both of my fields.
         </p>
@@ -40,109 +62,105 @@
     <div class="portfolio" id="portfolio">
         <h1>Portfolio</h1>
         <ul>
-            <li> Project 1 
-                <p> This will be where my first project description goes but since is a placeholder, it will be filled in later.</p>
-            </li>
+            <li>Sample Project – A simple webpage created using HTML and CSS.</li>
+            <li>Practice Drawing Collection – Digital art projects showing creativity and design skills.</li>
+        </ul>
+        <p>Technical Skills: Basic HTML5, CSS3, beginner JavaScript, and digital illustration.</p>
     </div>
 
     <!-- Contact Information Section -->
+    <h1>Contact Information</h1>
     <address id="contact">
-        <h1>Contact Information</h1>
         <p>Email: <a href="mailto:Em127@usca.edu">Em127@usca.edu</a></p>
         <p>Phone: (123) 456-7890</p>
         <p>Address: 123 Main St, Aiken, SC 29801</p>
     </address>
 
-   <!-- Simple Schedule Section -->
-<div class="schedule" id="schedule">
-    <h1>Schedule</h1>
-    <table border="1" cellpadding="8">
-        <tr>
-            <th style="background:#ff7817de; color:white;">Time</th>
-            <th style="background:#09e04d; color:white;">Monday</th>
-            <th style="background:#b30a45; color:white;">Tuesday</th>
-            <th style="background:#081452; color:white;">Wednesday</th>
-            <th style="background:#cae009; color:white;">Thursday</th>
-        </tr>
-        <tr>
-            <td>9:00 AM - 10:00 AM</td>
-            <td></td>
-            <td>Painting</td>
-            <td></td>
-            <td>Painting</td>
-        </tr>
-        <tr>
-            <td>10:00 AM - 11:00 AM</td>
-            <td></td>
-            <td>Painting</td>
-            <td></td>
-            <td>Painting</td>
-        </tr>
-        <tr>
-            <td>11:00 AM - 12:00 PM</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>12:00 PM - 1:00 PM</td>
-            <td><abbr title="Computer Science">CSCI225</abbr> Web Development</td>
-            <td></td>
-            <td><abbr title="Computer Science">CSCI225</abbr> Web Development</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>1:00 PM - 2:00 PM</td>
-            <td></td>
-            <td>Precalculus</td>
-            <td></td>
-            <td>Precalculus</td>
-        </tr>
-        <tr>
-            <td>2:00 PM - 3:00 PM</td>
-            <td></td>
-            <td>Precalculus</td>
-            <td></td>
-            <td>Precalculus</td>
-        </tr>
-        <tr>
-            <td>3:00 PM - 4:00 PM</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>4:00 PM - 5:00 PM</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>5:00 PM - 6:00 PM</td>
-            <td>Animation</td>
-            <td></td>
-            <td>Animation</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>6:00 PM - 7:00 PM</td>
-            <td>Animation</td>
-            <td></td>
-            <td>Animation</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>7:00 PM - 7:30 PM</td>
-            <td>Animation</td>
-            <td></td>
-            <td>Animation</td>
-            <td></td>
-        </tr>
-    </table>
-</div>
+    <!-- Schedule Section -->
+    <div class="schedule" id="schedule">
+        <h1>Schedule</h1>
+        <table class="schedule-table">
+            <tr>
+                <th class="time-col">Time</th>
+                <th class="day-col">Monday</th>
+                <th class="day-col">Tuesday</th>
+                <th class="day-col">Wednesday</th>
+                <th class="day-col">Thursday</th>
+            </tr>
+            <!-- 9:00 AM - 11:30 AM Painting on Tuesday & Thursday -->
+            <tr>
+                <td>9:00 AM - 10:00 AM</td>
+                <td></td>
+                <td rowspan="2">Painting</td>
+                <td></td>
+                <td rowspan="2">Painting</td>
+            </tr>
+            <tr>
+                <td>10:00 AM - 11:00 AM</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>11:00 AM - 12:00 PM</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <!-- 12:00 PM - 1:15 PM CSCI225 on Monday & Wednesday -->
+            <tr>
+                <td>12:00 PM - 1:00 PM</td>
+                <td><abbr title="Computer Science">CSCI225</abbr> Web Development</td>
+                <td></td>
+                <td><abbr title="Computer Science">CSCI225</abbr> Web Development</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1:00 PM - 2:00 PM</td>
+                <td></td>
+                <td rowspan="2">Precalculus</td>
+                <td></td>
+                <td rowspan="2">Precalculus</td>
+            </tr>
+            <tr>
+                <td>2:00 PM - 3:00 PM</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3:00 PM - 4:00 PM</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4:00 PM - 5:00 PM</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <!-- 5:00 PM - 7:30 PM Animation on Monday & Wednesday -->
+            <tr>
+                <td>5:00 PM - 6:00 PM</td>
+                <td rowspan="3">Animation</td>
+                <td></td>
+                <td rowspan="3">Animation</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>6:00 PM - 7:00 PM</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7:00 PM - 7:30 PM</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
 
     <!-- Footer Section -->
     <footer>
