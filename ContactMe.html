@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+</head>
+<body>
+    <h1>Watch this video of Batman Arkham Knight!!</h1>
+    <iframe 
+        width="731" 
+        height="420" 
+        src="https://www.youtube.com/embed/-fvUEiccUnU" 
+        title="1500+ Playtime Hours of Batman Arkham Knight: The Ultimate Display of Skill" 
+        style="border: none;" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+    </iframe>
+
+    <form name="feedback">
+        <label for="fname"> First Name:</label>
+        <input type="text" id="fname" name="fname" placeholder="anonymous" required><br><br>
+
+        <label for="lname"> Last Name:</label>
+        <input type="text" id="lname" name="lname" placeholder="anonymous" required><br><br>
+        <label for="mail"> Email:</label>
+        <input type="email" id="mail" name="mail" placeholder="name@domain.com"><br><br>
+        <p>Are you going to recommend this website?</p>
+        <input type="radio" id="Yes" name="recommend" value="Yes" required>
+        <label for="Yes"> Yes</label>
+        <input type="radio" id="No" name="recommend" value="No" required>
+        <label for="No"> No</label><br><br>
+
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" name="birthdate"><br><br>
+
+        <label for="upload">Upload a file:</label>
+        <input type="file" id="upload" name="upload"><br><br>
+
+        <label for="color">Favorite Color:</label>
+        <input type="color" id="color" name="favorite_color"><br><br>
+        <label for="rating"> What is your favorite website?</label>
+        <select id="rating" name="rating" required>
+            <option value="" disabled selected>Select a website</option>
+            <option value="1">Google</option>
+            <option value="2">Facebook</option>
+            <option value="3">Twitter</option>
+            <option value="4">Instagram</option>
+            <option value="5">LinkedIn</option>
+            <option value="6">YouTube</option>
+            <option value="7">Reddit</option>
+            <option value="8">TikTok</option>
+            <option value="9">Pinterest</option>
+            <option value="10">Snapchat</option>
+        </select><br><br>
+
+        <label for="points">How would you rate this website? (0–10): </label>
+        <input 
+            type="range" 
+            id="points" 
+            name="points" 
+            min="0" 
+            max="10" 
+            step="1" 
+            value="5" 
+            oninput="sliderValue.innerText = this.value">
+        <span id="sliderValue">5</span><br><br>
+        <label for="suggestions"> Any additional comments?</label><br>
+        <textarea id="suggestions" name="suggestions" rows="4" cols="50" placeholder="Comments..."></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
