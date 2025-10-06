@@ -1,5 +1,4 @@
 
-/* ---------- Global Reset ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 
@@ -12,10 +11,9 @@ body {
   color: #222;
   line-height: 1.6;
   overflow-y: auto;
-  padding-bottom: 80px; /* ensures footer doesn’t overlap content */
+  padding-bottom: 80px; 
 }
 
-/* ---------- Navigation Bar (fixed) ---------- */
 .navbar {
   position: fixed;
   width: 100%;
@@ -49,18 +47,14 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
-
-/* ---------- Top Section Container ---------- */
 .top-sections {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 80px 30px 20px 30px; /* space under navbar */
+  margin: 80px 30px 20px 30px; 
   gap: 20px;
 }
-
-/* ---------- Introduction Section ---------- */
 .introduction {
   flex: 1 1 65%;
   background: rgba(255,255,255,0.9);
@@ -85,8 +79,6 @@ body {
   box-shadow: 0 4px 12px rgba(101, 3, 3, 0.733);
   border: 3px solid #fff;
 }
-
-/* ---------- Assignment Section ---------- */
 .assignment {
   flex: 1 1 30%;
   min-width: 240px;
@@ -97,8 +89,6 @@ body {
   border-right: 3px solid #fff;
   border-bottom: 3px solid #fff;
 }
-
-/* ---------- Portfolio / Schedule / Contact Sections ---------- */
 .portfolio, .schedule, #contact {
   margin: 20px 30px;
   padding: 16px;
@@ -109,7 +99,6 @@ body {
   box-shadow: 0 4px 16px rgba(88, 3, 3, 0.788);
 }
 
-/* first paragraph shadow in portfolio */
 .portfolio p:first-of-type {
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   padding: 10px;
@@ -117,7 +106,6 @@ body {
   background: #fff;
 }
 
-/* ---------- Headings ---------- */
 h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -136,7 +124,6 @@ h1:hover {
   box-shadow: 0 8px 22px rgba(0,0,0,0.2);
 }
 
-/* ---------- Lists ---------- */
 ul, ol {
   color: #333;
   font-weight: 700;
@@ -144,7 +131,6 @@ ul, ol {
   list-style-image: url("img/marker.png");
 }
 
-/* ---------- Links ---------- */
 a {
   color: #0a6fbf;
   text-decoration: none;
@@ -157,7 +143,6 @@ a:hover {
   border-bottom-color: rgba(10,111,191,0.9);
 }
 
-/* ---------- Paragraph First Letter ---------- */
 p::first-letter {
   color: #0a6fbf;
   font-size: 1.5rem;
@@ -166,7 +151,6 @@ p::first-letter {
   margin-right: 5px;
 }
 
-/* ---------- Table (Schedule) ---------- */
 .schedule-table {
   width: 100%;
   border-collapse: collapse;
@@ -191,7 +175,6 @@ p::first-letter {
   background-color: #f2f2f2;
 }
 
-/* ---------- Footer (fixed) ---------- */
 footer {
   position: fixed;
   bottom: 0;
@@ -204,7 +187,6 @@ footer {
   z-index: 300;
 }
 
-/* ---------- Extra Rules ---------- */
 .introduction:hover,
 .assignment:hover,
 .portfolio:hover,
@@ -218,7 +200,6 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* ---------- Responsive Fix for Smaller Screens ---------- */
 @media (max-width: 900px) {
   .top-sections {
     flex-direction: column;
