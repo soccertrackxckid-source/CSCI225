@@ -1,219 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 body {
+  background-color: hsla(255, 28%, 14%, 0.865);
+  color: hsl(0, 0%, 100%);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url("img/logo-main.svg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #222;
-  line-height: 1.6;
-  overflow-y: auto;
-  padding-bottom: 80px; 
+  padding-bottom: 80px;
 }
 
 .navbar {
-  position: fixed;
-  width: 100%;
-  height: 35px;
-  background: rgb(89, 4, 4);
-  padding: 10px 0;
-  text-align: center;
-  z-index: 200;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-}
-
-.navbar ul {
-  list-style: none;
-}
-
-.navbar ul li {
-  display: inline-block;
-  margin: 0 10px;
-  border-radius: 8px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.navbar ul li a {
-  color: #070330;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 8px 14px;
-}
-
-.navbar ul li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
-.top-sections {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin: 80px 30px 20px 30px; 
-  gap: 20px;
-}
-.introduction {
-  flex: 1 1 65%;
-  background: rgba(255,255,255,0.9);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(3, 15, 96, 0.71);
-  z-index: 150;
-}
-
-.introduction p {
-  text-align: justify;
-  margin-bottom: 12px;
-}
-
-.introduction img {
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  margin: 10px auto;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(101, 3, 3, 0.733);
-  border: 3px solid #fff;
-}
-.assignment {
-  flex: 1 1 30%;
-  min-width: 240px;
-  background: rgba(255,255,255,0.95);
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(3, 12, 96, 0.765);
-  border-right: 3px solid #fff;
-  border-bottom: 3px solid #fff;
-}
-.portfolio, .schedule, #contact {
-  margin: 20px 30px;
-  padding: 16px;
-  background: rgba(255,255,255,0.9);
-  border-radius: 8px;
-  border-right: 3px solid #fff;
-  border-bottom: 3px solid #fff;
-  box-shadow: 0 4px 16px rgba(88, 3, 3, 0.788);
-}
-
-.portfolio p:first-of-type {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  background-color: hsl(0, 87%, 24%);
   padding: 10px;
-  border-radius: 6px;
-  background: #fff;
-}
-
-h1 {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 2px solid rgba(0,0,0,0.1);
-  background: #fafafa;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-h1:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.2);
-}
-
-ul, ol {
-  color: #333;
-  font-weight: 700;
-  padding-left: 25px;
-  list-style-image: url("img/marker.png");
-}
-
-a {
-  color: #0a6fbf;
-  text-decoration: none;
-  border-bottom: 2px dotted rgba(10,111,191,0.3);
-  transition: color 0.2s ease, border-bottom-color 0.2s ease;
-}
-
-a:hover {
-  color: #083a66;
-  border-bottom-color: rgba(10,111,191,0.9);
-}
-
-p::first-letter {
-  color: #0a6fbf;
-  font-size: 1.5rem;
-  font-weight: bold;
-  float: left;
-  margin-right: 5px;
-}
-
-.schedule-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 2px solid #ccc;
-  empty-cells: show;
-}
-
-.schedule-table th,
-.schedule-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.schedule-table th {
-  background: #0a6fbf;
-  color: white;
-}
-
-.schedule-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-footer {
   position: fixed;
-  bottom: 0;
-  left: 0;
+  top: 0;
   width: 100%;
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  z-index: 300;
+  z-index: 1000;
 }
 
-.introduction:hover,
-.assignment:hover,
-.portfolio:hover,
-.schedule:hover {
-  transform: translateY(-3px);
-  transition: transform 0.25s ease;
+.container-xxl {
+  margin-top: 70px;
 }
 
-a:focus {
-  outline: 3px dashed rgba(10,111,191,0.6);
-  outline-offset: 2px;
+
+iframe {
+  margin-left: 20px;
+  border-top: 20px solid rgba(3, 26, 230, 0.2);
+  border-left: 20px solid rgba(206, 67, 67, 0.2);
+  border-right: 20px solid rgba(206, 67, 67, 0.2);
+  border-bottom: 20px solid rgba(206, 67, 67, 0.2);
+  box-shadow: 4px 4px 8px rgba(206, 67, 67, 0.2);
+  width: 100%;
+  max-width: 730px;
 }
 
-@media (max-width: 900px) {
-  .top-sections {
-    flex-direction: column;
-  }
+label {
+  font-weight: 500;
+  margin-top: 10px;
+}
 
-  .introduction, .assignment {
-    width: 100%;
-    margin: 0;
-  }
+form label,
+form input,
+form select,
+form textarea {
+  margin-bottom: 10px;
+}
 
-  .navbar ul li {
-    display: block;
-    margin: 6px 0;
-  }
+input[type="submit"],
+input[type="reset"] {
+  margin-right: 10px;
+}
 
-  body { padding-top: 120px; }
+@media (max-width: 768px) {
+  iframe {
+    margin-left: 0;
+    margin-top: 20px;
+  }
 }
