@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Georgia Power Bill Calculator</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #4d1b1b;
+            padding: 30px;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .box {
+            background: #bba4a4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 48%;
+        }
+
+        h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #301212;
+            padding-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        input[type="number"],
+        input[type="checkbox"] {
+            margin-top: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #e34444;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: right;
+        }
+
+        th {
+            background-color: #f7f7f7;
+            text-align: left;
+        }
+
+        td:first-child {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <h2>Georgia Power Bill Calculator</h2>
+            <p>The utility bill calculator allows customers to estimate their monthly electric bill based on usage and
+                rates.</p>
+
+            <label>Enter Monthly Usage (kWh):</label>
+            <input type="number" id="usage" value="1000">
+
+            <label>Enter number of days for the billing period:</label>
+            <input type="number" id="days" value="31">
+
+            <label><input type="checkbox" id="insideCity"> Inside city limits?</label>
+            <label><input type="checkbox" id="summer"> Summer month (June–Sept)?</label>
+
+            <label>Enter Sales Tax (%):</label>
+            <input type="number" id="tax" value="7">
+
+            <button onclick="calculateBill()">Submit</button>
+            <button onclick="resetForm()">Reset</button>
+        </div>
+
+        <div class="box">
+            <h2>Details of your bill</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Items</th>
+                        <th>Fees ($)</th>
+                    </tr>
+                </thead>
+                <tbody id="results"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function calculateBill() {
+            let usage = parseFloat(document.getElementById('usage').value);
+            let days = parseFloat(document.getElementById('days').value);
+            let tax = parseFloat(document.getElementById('tax').value);
+            let insideCity = document.getElementById('insideCity').checked;
+            let summer = document.getElementById('summer').checked;
+            let baseCharge = (46.03 * days) / 100;
+            let tier1Rate = summer ? 0.066678 : 0.062404;
+            let tier2Rate = summer ? 0.110748 : 0.062404;
+            let tier3Rate = summer ? 0.114625 : 0.062404;
+
+            let tier1Usage = Math.min(usage, 650);
+            let tier2Usage = Math.min(Math.max(usage - 650, 0), 350);
+            let tier3Usage = Math.max(usage - 1000, 0);
+
+            let tier1 = tier1Usage * tier1Rate;
+            let tier2 = tier2Usage * tier2Rate;
+            let tier3 = tier3Usage * tier3Rate;
+            let baseRevenue = baseCharge + tier1 + tier2 + tier3;
+            let fuelRate = summer ? 0.045876 : 0.042859;
+            let fuelCost = usage * fuelRate;
+            let dsm = baseRevenue * 0.015989;
+            let nuclear = baseRevenue * 0.041562;
+            let environmental = baseRevenue * 0.162813;
+
+            let totalRevenue = baseRevenue + fuelCost + dsm + nuclear + environmental;
+            let franchiseRate = insideCity ? 0.030674 : 0.011839;
+            let franchiseFee = totalRevenue * franchiseRate;
+
+            let totalBeforeTax = totalRevenue + franchiseFee;
+            let totalWithTax = totalBeforeTax * (1 + tax / 100);
+
+
+            let results = `
+        <tr><td>Base Charge</td><td>${baseCharge.toFixed(2)}</td></tr>
+        <tr><td>Tier 1 Component</td><td>${tier1.toFixed(2)}</td></tr>
+        <tr><td>Tier 2 Component</td><td>${tier2.toFixed(2)}</td></tr>
+        <tr><td>Tier 3 Component</td><td>${tier3.toFixed(2)}</td></tr>
+        <tr><td><strong>Base Revenue -- Base Bill Subtotal</strong></td><td><strong>${baseRevenue.toFixed(2)}</strong></td></tr>
+        <tr><td>Fuel Cost Rider</td><td>${fuelCost.toFixed(2)}</td></tr>
+        <tr><td>Demand Side Management Rider</td><td>${dsm.toFixed(2)}</td></tr>
+        <tr><td>Nuclear Construction Cost Rider</td><td>${nuclear.toFixed(2)}</td></tr>
+        <tr><td>Environmental Compliance Cost Rider</td><td>${environmental.toFixed(2)}</td></tr>
+        <tr><td><strong>Total Revenue -- Current Service Subtotal</strong></td><td><strong>${totalRevenue.toFixed(2)}</strong></td></tr>
+        <tr><td>Franchise Fee</td><td>${franchiseFee.toFixed(2)}</td></tr>
+        <tr><td><strong>Total (before tax)</strong></td><td><strong>${totalBeforeTax.toFixed(2)}</strong></td></tr>
+        <tr><td><strong>TOTAL (with tax)</strong></td><td><strong>${totalWithTax.toFixed(2)}</strong></td></tr>
+      `;
+            document.getElementById('results').innerHTML = results;
+            if (totalWithTax > 500) {
+                window.open("https://www.georgiapower.com/residential/save-money-and-energy/products-programs.html", "_blank");
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('usage').value = '';
+            document.getElementById('days').value = '';
+            document.getElementById('insideCity').checked = false;
+            document.getElementById('summer').checked = false;
+            document.getElementById('tax').value = '';
+            document.getElementById('results').innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>
