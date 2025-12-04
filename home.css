@@ -1,3 +1,6 @@
+/* ------------------------------
+    Global Reset & Box Sizing
+------------------------------ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,27 +12,58 @@ body {
   height: 100%;
 }
 
+/* ------------------------------
+    Body & Font
+------------------------------ */
 body {
-  background-color: hsla(255, 28%, 14%, 0.865);
+  background-color: hsla(255, 28%, 14%, 0.865); /* Keep your dark background */
   color: hsl(0, 0%, 100%);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Web font requirement */
   padding-bottom: 80px;
+  background-image: url('../images/background.jpg'); /* Added background image */
+  background-size: cover;
+  background-position: center;
 }
 
+/* ------------------------------
+    Navbar
+------------------------------ */
 .navbar {
   background-color: hsl(0, 87%, 24%);
   padding: 10px;
-  position: fixed;
+  position: fixed; /* Assignment requirement */
   top: 0;
   width: 100%;
   z-index: 1000;
 }
 
+.navbar ul {
+  list-style: none;
+  display: flex; /* Display nav links in one line */
+  gap: 10px;
+}
+
+.navbar li {
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px 10px;
+  transition: background-color 0.3s ease; /* Hover transition */
+}
+
+.navbar li:hover {
+  background-color: #0a6fbf; /* Link hover effect */
+  color: #fff;
+}
+
+/* ------------------------------
+    Containers
+------------------------------ */
 .container-xxl {
   margin-top: 70px;
 }
 
-
+/* ------------------------------
+    Iframe Styling
+------------------------------ */
 iframe {
   margin-left: 20px;
   border-top: 20px solid rgba(3, 26, 230, 0.2);
@@ -41,6 +75,16 @@ iframe {
   max-width: 730px;
 }
 
+@media (max-width: 768px) {
+  iframe {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+/* ------------------------------
+    Forms
+------------------------------ */
 label {
   font-weight: 500;
   margin-top: 10px;
@@ -58,9 +102,161 @@ input[type="reset"] {
   margin-right: 10px;
 }
 
-@media (max-width: 768px) {
-  iframe {
-    margin-left: 0;
-    margin-top: 20px;
+/* ------------------------------
+    Section Styling & Positioning
+------------------------------ */
+
+/* Introduction Section */
+#introduction {
+  position: fixed; /* Fixed position as per assignment */
+  top: 80px;
+  left: 20px;
+  width: 400px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 3px solid #fff; /* Border requirement */
+  border-radius: 10px;
+}
+
+#introduction img {
+  float: right; /* Float image to right */
+  width: 150px;
+  height: auto;
+}
+
+/* Assignment Section */
+#assignment {
+  position: relative; /* changed from absolute */
+  margin: 20px auto 40px auto; /* space above and below */
+  width: 90%;
+  max-width: 400px;
+  padding: 15px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Portfolio, Schedule, Contact Sections */
+.section {
+  position: absolute; /* Required for Option 2 layout */
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none; /* Hidden by default */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  border-radius: 10px;
+}
+
+/* Show section on hover over h1 */
+h1:hover + .section {
+  display: block;
+}
+
+/* ------------------------------
+    Headings
+------------------------------ */
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------------------
+    Paragraphs
+------------------------------ */
+p {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+p::first-letter {
+  font-size: 1.8em;
+  color: #0a6fbf; /* Special style for first letter */
+  font-weight: bold;
+}
+
+/* Box-shadow for first paragraph in portfolio */
+#portfolio p:first-of-type {
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+
+/* ------------------------------
+    Table Styling
+------------------------------ */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid #fff;
+  padding: 10px;
+  vertical-align: middle;
+  empty-cells: show;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ------------------------------
+    Footer
+------------------------------ */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #222; /* Footer color requirement */
+  color: #fff;
+  text-align: center;
+}
+
+/* ------------------------------
+    Extra / Optional Effects
+------------------------------ */
+.shadow:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.box {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: rgba(0, 111, 191, 0.1);
+}
+
+/* ------------------------------
+    Responsive Layout
+------------------------------ */
+@media screen and (max-width: 900px) {
+  #introduction,
+  #assignment,
+  .section {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    position: relative;
+  }
+
+  .navbar ul {
+    flex-direction: column;
   }
 }
