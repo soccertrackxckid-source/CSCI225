@@ -1,6 +1,3 @@
-/* ------------------------------
-    Global Reset & Box Sizing
------------------------------- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,26 +9,20 @@ body {
   height: 100%;
 }
 
-/* ------------------------------
-    Body & Font
------------------------------- */
 body {
-  background-color: hsla(255, 28%, 14%, 0.865); /* Keep your dark background */
+  background-color: hsla(255, 28%, 14%, 0.865);
   color: hsl(0, 0%, 100%);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Web font requirement */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding-bottom: 80px;
-  background-image: url('../images/background.jpg'); /* Added background image */
+  background-image: url('../images/background.jpg');
   background-size: cover;
   background-position: center;
 }
 
-/* ------------------------------
-    Navbar
------------------------------- */
 .navbar {
   background-color: hsl(0, 87%, 24%);
   padding: 10px;
-  position: fixed; /* Assignment requirement */
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -39,31 +30,25 @@ body {
 
 .navbar ul {
   list-style: none;
-  display: flex; /* Display nav links in one line */
+  display: flex;
   gap: 10px;
 }
 
 .navbar li {
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px;
   padding: 5px 10px;
-  transition: background-color 0.3s ease; /* Hover transition */
+  transition: background-color 0.3s ease;
 }
 
 .navbar li:hover {
-  background-color: #0a6fbf; /* Link hover effect */
+  background-color: #0a6fbf;
   color: #fff;
 }
 
-/* ------------------------------
-    Containers
------------------------------- */
 .container-xxl {
   margin-top: 70px;
 }
 
-/* ------------------------------
-    Iframe Styling
------------------------------- */
 iframe {
   margin-left: 20px;
   border-top: 20px solid rgba(3, 26, 230, 0.2);
@@ -82,9 +67,6 @@ iframe {
   }
 }
 
-/* ------------------------------
-    Forms
------------------------------- */
 label {
   font-weight: 500;
   margin-top: 10px;
@@ -102,32 +84,26 @@ input[type="reset"] {
   margin-right: 10px;
 }
 
-/* ------------------------------
-    Section Styling & Positioning
------------------------------- */
-
-/* Introduction Section */
 #introduction {
-  position: fixed; /* Fixed position as per assignment */
+  position: fixed;
   top: 80px;
   left: 20px;
   width: 400px;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.1);
-  border: 3px solid #fff; /* Border requirement */
+  border: 3px solid #fff;
   border-radius: 10px;
 }
 
 #introduction img {
-  float: right; /* Float image to right */
+  float: right;
   width: 150px;
   height: auto;
 }
 
-/* Assignment Section */
 #assignment {
-  position: relative; /* changed from absolute */
-  margin: 20px auto 40px auto; /* space above and below */
+  position: relative;
+  margin: 20px auto 40px auto;
   width: 90%;
   max-width: 400px;
   padding: 15px;
@@ -137,13 +113,12 @@ input[type="reset"] {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Portfolio, Schedule, Contact Sections */
 .section {
-  position: absolute; /* Required for Option 2 layout */
+  position: absolute;
   top: 150px;
   left: 50%;
   transform: translateX(-50%);
-  display: none; /* Hidden by default */
+  display: none;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.1);
   border-right: 3px solid #fff;
@@ -151,14 +126,10 @@ input[type="reset"] {
   border-radius: 10px;
 }
 
-/* Show section on hover over h1 */
-h1:hover + .section {
+h1:hover+.section {
   display: block;
 }
 
-/* ------------------------------
-    Headings
------------------------------- */
 h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -173,9 +144,6 @@ h1:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-/* ------------------------------
-    Paragraphs
------------------------------- */
 p {
   line-height: 1.6;
   text-align: justify;
@@ -183,19 +151,15 @@ p {
 
 p::first-letter {
   font-size: 1.8em;
-  color: #0a6fbf; /* Special style for first letter */
+  color: #0a6fbf;
   font-weight: bold;
 }
 
-/* Box-shadow for first paragraph in portfolio */
 #portfolio p:first-of-type {
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
   padding: 10px;
 }
 
-/* ------------------------------
-    Table Styling
------------------------------- */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -214,23 +178,17 @@ tr:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* ------------------------------
-    Footer
------------------------------- */
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   padding: 20px;
-  background-color: #222; /* Footer color requirement */
+  background-color: #222;
   color: #fff;
   text-align: center;
 }
 
-/* ------------------------------
-    Extra / Optional Effects
------------------------------- */
 .shadow:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
@@ -242,10 +200,8 @@ footer {
   background-color: rgba(0, 111, 191, 0.1);
 }
 
-/* ------------------------------
-    Responsive Layout
------------------------------- */
 @media screen and (max-width: 900px) {
+
   #introduction,
   #assignment,
   .section {
